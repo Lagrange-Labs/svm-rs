@@ -28,34 +28,34 @@ required-features = ["solc"]
 
 [build-dependencies]
 vergen = { version = "8", optional = true, features = [
-    "build",
-    "git",
-    "gitcl",
+  "build",
+  "git",
+  "gitcl",
 ] }
 
 [dependencies]
-fs4 = "0.10"
+fs4 = "^0.11"
 hex.workspace = true
-dirs = "5.0"
+dirs = "^5.0"
 reqwest = { workspace = true, default-features = false, features = ["json"] }
 semver = { workspace = true, features = ["serde"] }
 serde = { workspace = true, features = ["derive"] }
 serde_json.workspace = true
-sha2 = "0.10"
-tempfile = "3.10"
-thiserror = "1.0"
+sha2 = "^0.10"
+tempfile = "^3.10"
+thiserror = "^2.0"
 url = "2.5"
 
 # CLI
-anyhow = { version = "1.0", optional = true }
-clap = { version = "4", features = ["derive"], optional = true }
-console = { version = "0.15", default-features = false, optional = true }
-dialoguer = { version = "0.11", default-features = false, optional = true }
-indicatif = { version = "0.17", default-features = false, optional = true }
-itertools = { version = "0.13", optional = true }
-tokio = { version = "1", features = [
-    "rt-multi-thread",
-    "macros",
+anyhow = { version = "^1.0", optional = true }
+clap = { version = "^4", features = ["derive"], optional = true }
+console = { version = "^0.15", default-features = false, optional = true }
+dialoguer = { version = "^0.11", default-features = false, optional = true }
+indicatif = { version = "^0.17", default-features = false, optional = true }
+itertools = { version = "^0.13", optional = true }
+tokio = { version = "^1", features = [
+  "rt-multi-thread",
+  "macros",
 ], optional = true }
 
 [target.'cfg(all(target_os = "windows", target_arch = "x86_64"))'.dependencies]
@@ -77,13 +77,13 @@ blocking = ["reqwest/blocking"]
 
 # bin
 cli = [
-    "dep:anyhow",
-    "dep:clap",
-    "dep:console",
-    "dep:dialoguer",
-    "dep:indicatif",
-    "dep:itertools",
-    "dep:tokio",
-    "dep:vergen",
+  "dep:anyhow",
+  "dep:clap",
+  "dep:console",
+  "dep:dialoguer",
+  "dep:indicatif",
+  "dep:itertools",
+  "dep:tokio",
+  "dep:vergen",
 ]
 solc = ["dep:anyhow"]
